@@ -1,5 +1,5 @@
 ## This function keeps a copy of the matrix in the cache
-makeCacheMatrix <- function(x) {
+makeCacheMatrix <- function(x = matrix()) {
         inverse <- NULL
         set <- function(y) {
                 x <<- y
@@ -30,16 +30,3 @@ cacheSolve <- function(x, ...) {
         x$setinverse(inverse)
         inverse
 }
-
-## The following is used to test the functionality of cachematrix.R
-## Create Test Matrix
-testmatrix <- matrix(1:4, 2, 2)
-
-## Cache the Test Matrix
-testcache <- makeCacheMatrix(testmatrix)
-
-## Find the inverse and put the result in cache
-testinverse <- cacheSolve(testcache)
-
-## Printing Inverse
-testinverse
